@@ -10,7 +10,7 @@ export interface BaseResponse<T> {
   version: string;
 }
 
-export function createBaseResponse<T extends object>(
+export function createBaseResponse<T extends object | null>(
   data: T,
   status = HttpStatus.OK,
   fields?: string,
@@ -41,11 +41,14 @@ export function createErrorResponse(
   };
 }
 
-export function filterFieldsNested<T extends object>(
+export function filterFieldsNested<T extends object | null>(
   data: T,
   fields?: string,
   excludeFields?: string[],
 ): any {
+  if (data == null) {
+    return data;
+  }
   const parsedFields = fields
     ?.split(',')
     .map((f) => f.trim())
