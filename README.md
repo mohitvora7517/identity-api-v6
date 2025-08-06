@@ -11,6 +11,7 @@
   - [**Setting up Environment**](#setting-up-environment)
   - [**Deploying Locally**](#deploying-locally)
   - [**Verifying through Postman Collections**](#verifying-through-postman-collections)
+  - [**Running Tests**](#running-tests)
   - [**Environment Configuration**](#environment-configuration)
 
 **Prerequisites**
@@ -64,6 +65,23 @@ pnpm run prisma:migrate:group
 ```bash
 pnpm run start:dev
 ```
+**Running Tests**
+-----------------
+
+Unit and end-to-end tests are implemented using Jest. After installing dependencies you can execute:
+
+```bash
+pnpm test
+```
+
+This command runs all unit tests under `test/unit` as well as any end-to-end tests under `test/e2e`.
+
+To generate a coverage report run:
+
+```bash
+pnpm test:cov
+```
+
 **Verifying through Postman Collections**
 --------------------------------------
 

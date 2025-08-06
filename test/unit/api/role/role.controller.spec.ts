@@ -1,18 +1,18 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { RoleController } from './role.controller';
-import { RoleService } from './role.service';
+import { RoleController } from '../../../../src/api/role/role.controller';
+import { RoleService } from '../../../../src/api/role/role.service';
 import { AuthGuard } from '@nestjs/passport';
 import {
   ForbiddenException,
   NotFoundException,
   BadRequestException,
 } from '@nestjs/common';
-import { AuthenticatedUser } from '../../core/auth/jwt.strategy';
+import { AuthenticatedUser } from '../../../../src/core/auth/jwt.strategy';
 import {
   RoleResponseDto,
   CreateRoleBodyDto,
   UpdateRoleBodyDto,
-} from '../../dto/role/role.dto';
+} from '../../../../src/dto/role/role.dto';
 
 // Mock RoleService
 const mockRoleService: jest.Mocked<Partial<RoleService>> = {
